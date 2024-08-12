@@ -16,4 +16,4 @@ function sumDigits(num){
     }
     return sum;
 }
-console.log(addDigits(123));
+console.log(addDigits(38));
