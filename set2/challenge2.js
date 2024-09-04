@@ -1,17 +1,14 @@
 // Given an integer array nums, return true if any value 
 // appears at least twice in the array, and return false 
 // if every element is distinct.
-
-function containDuplicate(nums){
-    const numbers=new Set();
-
-    for(let num of nums){
-        if(numbers.has(num)){
-            return true;
-        }
-        numbers.add(num);
+function repeatNum(num) {
+    for(i=0;i<num.length;i++){
+        for(j=0;j<num.length;j++){
+            if(i!=j && num[i]===num[j]){
+                return true;
+            }
     }
+}
     return false;
 }
-console.log(containDuplicate([1,2,3,4]));
-console.log(containDuplicate([1,2,3,3,4]));
+repeatNum([4,5,6,3,7,4]);
