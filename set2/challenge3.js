@@ -2,14 +2,17 @@
 // The majority element is the element that appears more than ⌊n / 2⌋ times. 
 // You may assume that the majority element always exists in the array.
 
-function getMajority(num) {
-    for(i=0;i<num.length;i++){
-        for(j=0;j<num.length;j++){
-            if(i!=j && num[i]===num[j]){
-                return num[i];
-            }
+function findMajorityElement(nums){
+    let num=null;
+    let count=0;
+    for(num of nums){
+        if(count ===0){
+            num=num;
+        }
+        //Increment count if num is the num, otherwise decrement
+        count += (num === num) ? 1 : -1;
     }
+    return num;
 }
-    return ;
-}
-getMajority([3,5,6,3,4,3,4]);e.log(findMajorityElement([3,2,3]));
+console.log(findMajorityElement([2,2,1,1,1,2,2]));
+console.log(findMajorityElement([3,2,3]));
